@@ -18,6 +18,7 @@
 				<th>Nome</th>
 				<th>Telefone</th>
 				<th>Email</th>
+				<th>Ações</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,6 +27,7 @@
 				<td><%=contato.getNome() %></td>
 				<td><%=contato.getTelefone() %></td>
 				<td><%=contato.getEmail() %></td>
+				<td><a href="apagar_contato.jsp?id=<%=contato.getId()%>">Apagar</a></td>
 			</tr>
 			<%} %>
 		</tbody>
