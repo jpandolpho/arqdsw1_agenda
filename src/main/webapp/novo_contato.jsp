@@ -2,14 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="contatos" class="br.edu.ifsp.dsw1.ContatosBean" scope="application"/>
+<jsp:useBean id="contato" class="br.edu.ifsp.dsw1.Contato" scope="request"/>
+<jsp:setProperty name="contato" property="*"/>
 <%
-String strNome = request.getParameter("text_nome");
-String strEmail = request.getParameter("text_email");
-String strTelefone = request.getParameter("text_telefone");
 boolean inserido = false;
 
-if(strNome!=null){
-	Contato contato = new Contato(strNome,strTelefone,strEmail);
+if(contato.getNome()!=null){
 	contatos.insere(contato);
 	inserido = true;
 }
@@ -24,13 +22,13 @@ if(strNome!=null){
 	<%if(!inserido){ %>
 	<form action="novo_contato.jsp">
 		<label for="nome">Nome:</label>
-		<input type="text" id="nome" name="text_nome" required="required"><br><br>
+		<input type="text" id="nome" name="nome" required="required"><br><br>
 		
 		<label for="telefone">Telefone:</label>
-		<input type="text" id="telefone" name="text_telefone" required="required"><br><br>
+		<input type="text" id="telefone" name="telefone" required="required"><br><br>
 		
 		<label for="email">Email:</label>
-		<input type="text" id="email" name="text_email" required="required"><br><br>
+		<input type="text" id="email" name="email" required="required"><br><br>
 		
 		<input type="submit" value="Enviar">
 	</form>
