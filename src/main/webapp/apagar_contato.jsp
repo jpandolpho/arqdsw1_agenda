@@ -16,7 +16,7 @@ if(id!=null){
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Apagar Contato</title>
 </head>
 <body>
 <%if(sucesso){%>
